@@ -8,30 +8,31 @@
 
 int binary_tree_heeight(const binary_tree_t *tree)
 {
-        int a = 0, b = 0;
-
-        if (!tree)
-                return (0);
-
-        if (tree->right && tree->left)
-        {
-                a = a + binary_tree_heeight(tree->right);
+	int a = 0, b = 0;
+	
+	if (!tree)
+		return (0);
+	
+	if (tree->right && tree->left)
+	{
+		a = a + binary_tree_heeight(tree->right);
 		b = b + binary_tree_heeight(tree->left);
 		if (b > a)
 			a = b;
-                return (a + 1);
-        } else if (tree->left)
-        {
-                a = a + binary_tree_heeight(tree->left);
-                return (a + 1);
-        } else if (tree->right)
+		return (a + 1);
+	} else if (tree->left)
+	{
+		a = a + binary_tree_heeight(tree->left);
+		return (a + 1);
+	} else if (tree->right)
 	{
 		a = a + binary_tree_heeight(tree->right);
 		return (a + 1);
 	} else
 	{
-		return (a);
+		a = 0;
 	}
+	return (a);
 }
 
 /**
