@@ -25,24 +25,14 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	{
 		current_node = parent;
 
-		while (1)
-		{
-			past_node = current_node;
-			if (current_node->n > value)
-			{
-				current_node = current_node->left;
-			}
-			else
-			{
-				current_node = current_node->right;
-			}
-			if (current_node == NULL)
-			{
-				new_node->parent = past_node;
-				new_node->n = value;
-				current_node = new_node;
-				return (current_node);
-			}
-		}
+		past_node = current_node;
+		if (current_node->n > value)
+			current_node = current_node->left;
+		else
+			current_node = current_node->right;
+		new_node->parent = past_node;
+		new_node->n = value;
+		current_node = new_node;
+		return (current_node);
 	}
 }
