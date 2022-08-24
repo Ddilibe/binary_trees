@@ -25,7 +25,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	{
 		current_node = parent;
 
-		while(1)
+		while (1)
 		{
 			past_node = current_node;
 			if (current_node->n > value)
