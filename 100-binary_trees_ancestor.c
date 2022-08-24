@@ -8,7 +8,8 @@
  * Return: Pointer to the common ancestor or NULL if no common ancestor
  */
 
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+		const binary_tree_t *second)
 {
 	size_t a, b;
 
@@ -52,15 +53,15 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-        size_t a;
-
-        if (!tree)
-                return (0);
-
-        if (tree->parent)
-        {
-                a = binary_tree_depth(tree->parent);
-                return (a + 1);
-        }
-        return (0);
+	size_t a;
+	
+	if (!tree)
+		return (0);
+	
+	if (tree->parent)
+	{
+		a = binary_tree_depth(tree->parent);
+		return (a + 1);
+	}
+	return (0);
 }
